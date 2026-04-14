@@ -1,10 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Form Input - MY Website 20210140019</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            padding: 30px;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            color: #555;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+        input:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+        .radio-group {
+            margin-bottom: 20px;
+        }
+        .radio-group label {
+            font-weight: normal;
+            display: inline;
+            margin-left: 6px;
+        }
+        .radio-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .btn-submit {
+            padding: 10px 24px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .btn-submit:hover { background-color: #0056b3; }
+        .btn-back {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .btn-back:hover { text-decoration: underline; }
+    </style>
 </head>
 <body>
+<div class="container">
+    <h2>Form Input Mahasiswa</h2>
 
+    <form th:action="@{/form}" method="post">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required />
+
+        <label for="nim">NIM:</label>
+        <input type="text" id="nim" name="nim" placeholder="Masukkan NIM" required />
+
+        <label>Jenis Kelamin:</label>
+        <div class="radio-group">
+            <div class="radio-item">
+                <input type="radio" id="laki" name="jenisKelamin" value="Laki-laki" required />
+                <label for="laki">Laki-laki</label>
+            </div>
+            <div class="radio-item">
+                <input type="radio" id="perempuan" name="jenisKelamin" value="Perempuan" />
+                <label for="perempuan">Perempuan</label>
+            </div>
+        </div>
+
+        <button type="submit" class="btn-submit">Submit</button>
+        <a href="/home" class="btn-back">Kembali ke Home</a>
+    </form>
+</div>
 </body>
 </html>
