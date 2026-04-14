@@ -12,14 +12,10 @@ import java.util.List;
 @Controller
 public class UserController {
 
-    // Password login = NIM kamu, ganti sesuai NIM masing-masing
     private static final String USERNAME = "admin";
-    private static final String PASSWORD = "20210140019"; // <-- GANTI DENGAN NIM KAMU
+    private static final String PASSWORD = "20240140111";
 
-    // Menyimpan data secara temporary (tidak pakai database)
     private static List<User> dataUsers = new ArrayList<>();
-
-    // ===================== LOGIN =====================
 
     @GetMapping("/")
     public String root() {
@@ -28,7 +24,6 @@ public class UserController {
 
     @GetMapping("/login")
     public String loginPage(HttpSession session) {
-        // Jika sudah login, langsung ke home
         if (session.getAttribute("loggedIn") != null) {
             return "redirect:/home";
         }
@@ -49,19 +44,14 @@ public class UserController {
         }
     }
 
-    // ===================== HOME =====================
-
     @GetMapping("/home")
     public String homePage(HttpSession session, Model model) {
-        // Cek apakah sudah login
         if (session.getAttribute("loggedIn") == null) {
             return "redirect:/login";
         }
         model.addAttribute("dataUsers", dataUsers);
         return "home";
     }
-
-    // ===================== FORM =====================
 
     @GetMapping("/form")
     public String formPage(HttpSession session) {
@@ -79,12 +69,9 @@ public class UserController {
         if (session.getAttribute("loggedIn") == null) {
             return "redirect:/login";
         }
-        // Simpan data ke list (temporary, hilang saat server restart)
         dataUsers.add(new User(nama, nim, jenisKelamin));
         return "redirect:/home";
     }
-
-    // ===================== LOGOUT =====================
 
     @GetMapping("/logout")
     public String logout(HttpSession session) {

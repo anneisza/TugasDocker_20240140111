@@ -2,18 +2,18 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Login - MY Website 20210140019</title>
+    <title>Login - 20240140111</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f2f5;
+            background: #f0f2f5;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
         }
-        .login-container {
+        .box {
             background: white;
             padding: 40px;
             border-radius: 8px;
@@ -21,84 +21,40 @@
             width: 100%;
             max-width: 400px;
         }
-        h2 {
-            text-align: center;
-            margin-bottom: 8px;
-            color: #333;
+        h2 { text-align: center; margin-bottom: 6px; color: #333; }
+        .sub { text-align: center; color: #888; font-size: 13px; margin-bottom: 24px; }
+        label { display: block; margin-bottom: 6px; font-size: 14px; font-weight: bold; color: #555; }
+        input {
+            width: 100%; padding: 10px; border: 1px solid #ddd;
+            border-radius: 4px; font-size: 14px; margin-bottom: 16px;
         }
-        .subtitle {
-            text-align: center;
-            color: #888;
-            font-size: 13px;
-            margin-bottom: 24px;
+        button {
+            width: 100%; padding: 11px; background: #007bff;
+            color: white; border: none; border-radius: 4px;
+            font-size: 15px; cursor: pointer;
         }
-        label {
-            display: block;
-            margin-bottom: 6px;
-            color: #555;
-            font-size: 14px;
-            font-weight: bold;
-        }
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 14px;
-            margin-bottom: 16px;
-        }
-        input:focus {
-            outline: none;
-            border-color: #007bff;
-        }
-        .btn-login {
-            width: 100%;
-            padding: 11px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 15px;
-            cursor: pointer;
-        }
-        .btn-login:hover { background-color: #0056b3; }
-        .error-msg {
-            background: #ffe0e0;
-            color: #c0392b;
-            padding: 10px;
-            border-radius: 4px;
-            margin-bottom: 16px;
-            font-size: 13px;
-            text-align: center;
-        }
-        .footer-text {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 12px;
-            color: #aaa;
+        button:hover { background: #0056b3; }
+        .error {
+            background: #ffe0e0; color: #c0392b;
+            padding: 10px; border-radius: 4px;
+            margin-bottom: 16px; font-size: 13px; text-align: center;
         }
     </style>
 </head>
 <body>
-<div class="login-container">
+<div class="box">
     <h2>Login Page</h2>
-    <p class="subtitle">MY Website - 20210140019</p>
+    <p class="sub">MY Website - 20240140111</p>
 
-    <!-- Pesan error jika login gagal -->
-    <div th:if="${error}" class="error-msg" th:text="${error}"></div>
+    <div th:if="${error}" class="error" th:text="${error}"></div>
 
     <form th:action="@{/login}" method="post">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" placeholder="Masukkan username" required />
-
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" placeholder="Masukkan password" required />
-
-        <button type="submit" class="btn-login">Login</button>
+        <label>Username:</label>
+        <input type="text" name="username" placeholder="Masukkan username" required />
+        <label>Password:</label>
+        <input type="password" name="password" placeholder="Masukkan password" required />
+        <button type="submit">Login</button>
     </form>
-
-    <p class="footer-text">NIM: 20210140019</p>
 </div>
 </body>
 </html>
