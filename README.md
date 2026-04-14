@@ -4,13 +4,13 @@ teman)
 
 
 
-3. Halaman container docker desktop (setelah membuat container dari image dari 
+2. Halaman container docker desktop (setelah membuat container dari image dari 
 teman)
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/b78b7536-3ee5-4128-a61e-b8f8656608e3" />
 
 
 
-5. Halaman web masing masing pastikan di run dari docker 4 screenshot : 
+3. Halaman web masing masing pastikan di run dari docker 4 screenshot : 
 • Halaman login
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/30e6f902-3ff1-44bb-9380-de3a9e5cf98a" />
 
@@ -23,7 +23,7 @@ teman)
 • Halaman home setelah input
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/a5bd68e6-db46-4ef1-bc5f-b6222fea3849" />
 
-7. Halaman web teman yang di pull 4 screenshot: 
+4. Halaman web teman yang di pull 4 screenshot: 
 • Halaman login
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/99400252-cf85-44d0-acc9-4edaff056542" />
 
